@@ -18,9 +18,9 @@ export default function CreateStudent() {
 
   
   const [student, setStudent]= useState({
-      IdNo: '123', 
-      studentName: 'nm', 
-      tutorialGroup: 't02'
+      IdNo: '', 
+      studentName: '', 
+      tutorialGroup: ''
       }); 
 
    const createStudent = () => {
