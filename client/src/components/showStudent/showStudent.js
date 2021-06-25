@@ -9,7 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
 import IconButton from '@material-ui/core/IconButton'; 
-import DeleteIcon from '@material-ui/icons/Delete'; 
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 const useStyles = makeStyles({
   table: {
@@ -36,24 +37,32 @@ export default function ShowStudent() {
 
   return (
       <>
-      <h2>Periods</h2>
+      <h2>Schedule</h2>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell align="right">Id Number</TableCell>
-            <TableCell align="right">TutorialGroup</TableCell>
-            <TableCell align="right">Delete</TableCell>
+            <TableCell>Day</TableCell>
+            <TableCell align="right">First</TableCell>
+            <TableCell align="right">Second</TableCell>
+            <TableCell align="right">Third </TableCell>
+            <TableCell align="right">Fourth </TableCell>
+            <TableCell align="right">Fifth </TableCell>
+            <TableCell align="right">Tutorial Group</TableCell>
+            <TableCell align="right">Remove</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {studentsList.map((student,key) => (
             <TableRow key={key}>
               <TableCell component="th" scope="row">
-                {student.studentName}
+                {student.Day}
               </TableCell>
-              <TableCell align="right">{student.IdNo}</TableCell>
+              <TableCell align="right">{student.First}</TableCell>
+              <TableCell align="right">{student.Second}</TableCell>
+              <TableCell align="right">{student.Third}</TableCell>
+              <TableCell align="right">{student.Fourth}</TableCell>
+              <TableCell align="right">{student.Fifth}</TableCell>
               <TableCell align="right">{student.tutorialGroup}</TableCell>
               <TableCell align="right">
            <IconButton aria-label="delete" className={classes.margin} onClick ={() => deleteStudent(student._id)}> 

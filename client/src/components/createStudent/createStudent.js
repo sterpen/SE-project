@@ -16,15 +16,18 @@ const useStyles = makeStyles((theme) => ({
 export default function CreateStudent() {
   const classes = useStyles();
 
-  
+  //Update the states 
   const [student, setStudent]= useState({
-      IdNo: '', 
-      studentName: '', 
-      tutorialGroup: ''
+    Day: '',
+    First: '', 
+    Second: '',
+    Third: '', 
+    Fourth: '', 
+    Fifth: '',
+    tutorialGroup: ''
       }); 
 
    const createStudent = () => {
-     console.log(student)
        axios.post('http://localhost:5000/students', student).then( () =>{
            window.location.reload(false);
        })
@@ -35,13 +38,25 @@ export default function CreateStudent() {
       <>
       <h2> Create Schedule</h2>
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="outlined-basic" label="Id number" variant="outlined" value = {student.IdNo} onChange= {(event) => {
-          setStudent({ ...student, IdNo :event.target.value}) 
+      <TextField id="outlined-basic" label="day of the week" variant="outlined" value = {student.Day} onChange= {(event) => {
+          setStudent({ ...student, Day :event.target.value}) 
           }}/>
-      <TextField id="outlined-basic" label="Name" variant="outlined" value = {student.studentName} onChange= {(event) => {
-          setStudent({ ...student, studentName :event.target.value}) 
+      <TextField id="outlined-basic" label="first period" variant="outlined" value = {student.FirstP} onChange= {(event) => {
+          setStudent({ ...student, First :event.target.value}) 
           }}/>
-      <TextField id="outlined-basic" label="Tutorial Group" variant="outlined" value = {student.tutorialGroup} onChange= {(event) => {
+      <TextField id="outlined-basic" label="second period" variant="outlined" value = {student.SecondP} onChange= {(event) => {
+          setStudent({ ...student, Second :event.target.value}) 
+          }}/>
+      <TextField id="outlined-basic" label="third period" variant="outlined" value = {student.ThirdP} onChange= {(event) => {
+          setStudent({ ...student, Third :event.target.value}) 
+          }}/>
+          <TextField id="outlined-basic" label="fourth period" variant="outlined" value = {student.FourthP} onChange= {(event) => {
+          setStudent({ ...student, Fourth :event.target.value}) 
+          }}/>
+          <TextField id="outlined-basic" label="fifth period" variant="outlined" value = {student.FifthP} onChange= {(event) => {
+          setStudent({ ...student, Fifth :event.target.value}) 
+          }}/>
+          <TextField id="outlined-basic" label="tutorial group" variant="outlined" value = {student.tutorial} onChange= {(event) => {
           setStudent({ ...student, tutorialGroup :event.target.value}) 
           }}/>
       <Button variant="contained" color="primary" onClick ={createStudent}> 

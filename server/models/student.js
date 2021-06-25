@@ -1,8 +1,12 @@
 import mongoose from 'mongoose'; 
 
 const studentSchema = mongoose.Schema({
-    IdNo: Number,
-    studentName: String, 
+    Day: String,
+    First: String, 
+    Second: String,
+    Third: String, 
+    Fourth: String, 
+    Fifth: String,  
     tutorialGroup: {
         type: String, 
         default: 'A'
