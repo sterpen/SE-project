@@ -43,7 +43,6 @@ export default function ShowSchedule() {
             <TableCell align="right">Fourth </TableCell>
             <TableCell align="right">Fifth </TableCell>
             <TableCell align="right">Tutorial Group</TableCell>
-            <TableCell align="right">Remove</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
