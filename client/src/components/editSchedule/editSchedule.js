@@ -37,7 +37,7 @@ export default function ShowStudent() {
 
   return (
       <>
-      <h2>Schedule</h2>
+      <h2>Administrator Schedule</h2>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
